@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import { AppRegistry, StyleSheet, Text, View, Button } from 'react-native';
 import { createOpenLink } from 'react-native-open-maps';
 
+//const startAddress ='1 Infinite Loop, Cupertino, CA';
+//const endAddress ='1600 Amphitheatre Pkwy, Mountain View, CA';
+const directions = {end:'Sanderumvej 16, Odense, DK'};
+const openDirections= createOpenLink(directions);
+
 export default class example extends Component{
   render(){
     return (
@@ -9,7 +14,7 @@ export default class example extends Component{
 <Text style={styles.header}>Go to place</Text>
 <Button
 color={'#bdc3c7'}
-onPress={createOpenLink({latitude: 37.865101, longitude:-119.538330})}
+onPress={openDirections}
 title={"Click to open"}>
 </Button>
       </View>
